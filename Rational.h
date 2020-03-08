@@ -16,7 +16,6 @@ public:
 	static Rational* sub(Rational* a, Rational* b);
 	static Rational* multiply(Rational* a, Rational* b);
 	static Rational* div(Rational* divee, Rational* diver);
-	static void simplify(Rational* r);
 
 	bool operator==(const Rational& r) {
 		return (this->numerator * r.dominator - this->dominator * r.numerator) == 0;
@@ -33,7 +32,7 @@ public:
 
 // Hash algorithm for hash_map if needed.
 struct rational_hash {
-	size_t operator() (const Rational* r) const {
+	int64_t operator() (const Rational* r) const {
 		return r->hash();
 	}
 };
