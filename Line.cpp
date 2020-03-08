@@ -9,9 +9,11 @@ Line::Line(Point* p1, Point* p2) {
 
 	if (*(p1->get_y()) < *(p2->get_y())) {
 		this->upper_point = p2;
+		this->lower_point = p1;
 	}
 	else {
 		this->upper_point = p1;
+		this->lower_point = p2;
 	}
 }
 

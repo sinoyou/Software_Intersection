@@ -53,7 +53,7 @@ Rational* Rational::sub(Rational* a, Rational* b) {
 */
 Rational* Rational::multiply(Rational* a, Rational* b) {
 	auto num = a->numerator * b->numerator;
-	auto dom = a->numerator * b->numerator;
+	auto dom = a->dominator * b->dominator;
 	Rational* p = new Rational(num, dom);
 	return p;
 }
