@@ -28,6 +28,7 @@ int main(int argc, char* argv[])
 	auto object_list = new std::list<Line*>;
 	int N;
 	// input objects number
+	/**/
 	input >> N;
 	for (int i = 0; i < N; i++) {
 		char type;
@@ -43,9 +44,26 @@ int main(int argc, char* argv[])
 			std::cerr << i << " unsupported geometry object, ignored.";
 		}
 	}
+
 	// solve the problem
 	auto solver = new AlgorithmRunner(object_list);
 	output << solver->solve() << std::endl;
+	
+	
+	/* - For Profile Test
+	
+	N = 100000;
+	auto pp = new Point(new Rational(0), new Rational(0));
+	auto pq = new Point(new Rational(0), new Rational(1));
+	object_list->push_back(new Line(pp, pq));
+	for (int i = 0; i < N; i++) {
+		auto p1 = new Point(new Rational(3), new Rational(i * 17 % 50000));
+		auto p2 = new Point(new Rational(-3), new Rational(-(i * 17 % 50000)));
+		object_list->push_back(new Line(p1,p2));
+	}
+	auto solver = new AlgorithmRunner(object_list);
+	std::cout << solver->solve() << std::endl;
+	*/
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

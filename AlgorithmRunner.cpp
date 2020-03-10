@@ -1,6 +1,6 @@
 #include "AlgorithmRunner.h"
 
-#define SQUARE_MAX 1005
+#define SQUARE_MAX 500005
 
 AlgorithmRunner::AlgorithmRunner(std::list<Line*>* l): lines(l){}
 

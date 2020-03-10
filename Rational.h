@@ -25,14 +25,14 @@ public:
 		return (this->numerator * r.dominator - this->dominator * r.numerator) * (this->dominator * r.dominator) < 0;
 	}
 
-	int64_t hash() const {
-		return numerator * 31 + dominator * 17373321;
+	size_t hash() const {
+		return size_t(numerator * 31 + dominator * 17373321);
 	}
 };
 
 // Hash algorithm for hash_map if needed.
 struct rational_hash {
-	int64_t operator() (const Rational* r) const {
+	size_t operator() (const Rational* r) const {
 		return r->hash();
 	}
 };

@@ -2,6 +2,20 @@
 #include "Rational.h"
 #include "utils.h"
 
+inline int64_t abs_(int64_t x) {
+	if (x < 0)
+		return -x;
+	return x;
+}
+
+inline int64_t max_(int64_t x, int64_t y) {
+	return x < y ? y : x;
+}
+
+inline int64_t min_(int64_t x, int64_t y) {
+	return x < y ? x : y;
+}
+
 Rational::Rational(int64_t value) {
 	this->numerator = value;
 	this->dominator = 1;
@@ -9,11 +23,12 @@ Rational::Rational(int64_t value) {
 
 Rational::Rational(int64_t num, int64_t dom) {
 	if (dom == 0) {
-		std::cerr << "Detect zero division, auto turned to 1." << std::endl;
-		dom = 1;
+		std::cerr << "Detect zero division, auto turned to 1." << std::endl;dom = 1;
 	}
 
-	auto GCD = gcd(std::max(std::abs(num), std::abs(dom)), std::min(std::abs(num), std::abs(dom)));
+	auto abs_num = abs_(num);
+	auto abs_dom = abs_(dom);
+	auto GCD = gcd(max_(abs_num, abs_dom), min_(abs_num, abs_dom));
 	
 	num = num / GCD;
 	dom = dom / GCD;

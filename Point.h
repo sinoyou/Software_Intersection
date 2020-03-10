@@ -25,14 +25,14 @@ public:
 		return *(this->x) == *p.x && *(this->y) == *p.y;
 	}
 
-	int64_t hash() const {
+	size_t hash() const {
 		return x->hash() + y->hash();
 	}
 };
 
 // hash function for point (generally for hash of RationalX and RationalY)
 struct point_hash {
-	int64_t operator() (const Point* p) const {
+	size_t operator() (const Point* p) const {
 		return p->hash();
 	}
 };
