@@ -9,7 +9,7 @@ Rational::Rational(int64_t value) {
 
 Rational::Rational(int64_t num, int64_t dom) {
 	if (dom == 0) {
-		std::cout << "Detect zero division, auto turned to 1." << std::endl;
+		std::cerr << "Detect zero division, auto turned to 1." << std::endl;
 		dom = 1;
 	}
 

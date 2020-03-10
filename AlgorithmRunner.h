@@ -13,7 +13,7 @@
 class AlgorithmRunner
 {
 private:
-	std::list<Line*> lines;
+	std::list<Line*>* lines;
 	// strategy 1: N^2 algorithm
 	// std::set<Point*> intersection;
 
@@ -21,7 +21,7 @@ private:
 	// std::priority_queue<Point*, std::vector<Point*>, cmp_by_y> y_sort;
 
 public:
-	AlgorithmRunner(std::list<Line*>);
+	AlgorithmRunner(std::list<Line*>*);
 	int64_t solve();
 	std::set<Point*, point_set_cmp>* n_square_solution();
 	std::set<Point*, point_set_cmp>* n_logn_solution();
