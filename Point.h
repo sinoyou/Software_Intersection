@@ -15,12 +15,14 @@ private:
 
 public:
 	Point(Rational* x, Rational* y);
+	Point(int64_t x, int64_t y);
 	void register_line(Line* l);
+	std::list<Line*>* get_lines();
 	Rational* get_x() const;
 	Rational* get_y() const;
 
 	bool operator==(const Point& p) {
-		return this->x == p.x && this->y == p.y;
+		return *(this->x) == *p.x && *(this->y) == *p.y;
 	}
 
 	int64_t hash() const {

@@ -22,7 +22,7 @@ public:
 	}
 
 	bool operator<(const Rational& r) {
-		return (this->numerator * r.dominator - this->dominator * r.numerator) < 0;
+		return (this->numerator * r.dominator - this->dominator * r.numerator) * (this->dominator * r.dominator) < 0;
 	}
 
 	int64_t hash() const {

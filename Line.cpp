@@ -39,9 +39,11 @@ Point* Line::get_intersection(Line* l1, Line* l2) {
 	return p;
 }
 
+/*
 void Line::register_point(Point* p) {
 	this->have_points.insert(p);
 }
+*/
 
 Point* Line::get_upper_point() {
 	return this->upper_point;
